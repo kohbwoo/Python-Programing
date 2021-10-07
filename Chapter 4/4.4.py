@@ -1,5 +1,6 @@
-def mile2km(num):
-    print(num, "마일 = ", num*1.61, "킬로미터")
+def mile2km(m):
+    return m * 1.61
 
-for i in range(1,6):
-    mile2km(i)
+
+for i in range(1, 6):
+    print(i, "마일 = ", mile2km(i), "킬로미터")
