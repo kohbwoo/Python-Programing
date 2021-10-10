@@ -3,3 +3,4 @@ def sum_avg(*args):
 
 
 s, a = sum_avg(1.1, 2.2, 3.3, 4.4)
+print(s, a)
