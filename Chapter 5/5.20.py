@@ -1,11 +1,14 @@
 def Q520(src):
+    print("src = '" + src + "'")
+    ans = ""
     if src == "":
-        return ""
-    if len(src) == 1:
-        return src
+        return "output = '" + ans + "'\n"
+    elif len(src) == 1:
+        ans = src
+        return "output = '" + ans + "'\n"
 
     tmp = 1
-    ans = ""
+
     for i in range(1, len(src)):
         if src[i - 1] == src[i]:
             tmp += 1
@@ -15,9 +18,10 @@ def Q520(src):
         if i == len(src) - 1:
             ans += (src[i] + str(tmp))
 
-    return ans
+    return "output = '" + ans + "'\n"
 
 
+print(Q520(""))
 print(Q520('a'))
 print(Q520('ab'))
 print(Q520('aaaabbb'))
