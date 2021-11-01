@@ -8,3 +8,5 @@ for i in s_list:
 
 print("s_list =", s_list)
 print("new_s_list =", new_s_list)
+
+
