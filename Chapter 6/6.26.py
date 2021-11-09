@@ -11,3 +11,5 @@ for i in mylist:
         print(a,"요소는 없지만" ,mylist.index(a[1], a[0]), "번째에", (a[1],a[0]), "요소가 있습니다.")
         break
 
+    if i == mylist[-1]:
+        print("해당 요소가 없습니다.")
