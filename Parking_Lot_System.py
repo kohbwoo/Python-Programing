@@ -20,6 +20,11 @@ def Car_Entrance():
     Car_List.append([New_Car_Num, datetime.datetime.now()])
 
 
+def Car_Out():
+    Car_Num = input("출차하실 차량 번호를 입력하세요.")
+    Price = ""
+    print(Car_Num, "주차 비용은", Price, "입니다.")
+
 def Car_Inquire():
     clearConsole()
     print("차량 조회")
@@ -36,6 +41,9 @@ while True:
 
     if User_Input == "1":
         Car_Entrance()
+
+    elif User_Input == "2":
+        Car_Out()
 
     elif User_Input == "3":
         Car_Inquire()
