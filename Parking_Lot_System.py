@@ -6,7 +6,7 @@ Car_List = [["14무5673", datetime.datetime(2021, 11, 15, 5, 15)],
             ["14무5674", datetime.datetime(2021, 11, 15, 5, 15)]]
 
 clearConsole = lambda: print('\n' * 50)
-
+Price_Of_10Min = 500
 def Print_menus():
     print("\t주차장 요금 정산기")
     print("1.\t차량 입차")
@@ -34,6 +34,10 @@ def Car_Inquire():
     input("초기화면으로 돌아가려면 아무키나 입력하세요")
     clearConsole()
 
+def Car_Out():
+    Car_Num = input("출차 할 차량의 번호를 입력해주세요")
+
+    print(Car_Num, "차량의 요금은", Price_Of_10Min,"원 입니다.")
 
 while True:
     Print_menus()
@@ -41,6 +45,8 @@ while True:
 
     if User_Input == "1":
         Car_Entrance()
+    if User_Input == "2":
+        Car_Out()
 
     elif User_Input == "2":
         Car_Out()
