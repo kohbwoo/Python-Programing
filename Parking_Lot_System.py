@@ -16,14 +16,10 @@ def Print_menus():
 
 
 def Car_Entrance():
+    print("차량 입차")
     New_Car_Num = input("차량번호를 입력하시면 현재시간으로 입차됩니다.")
     Car_List.append([New_Car_Num, datetime.datetime.now()])
 
-
-def Car_Out():
-    Car_Num = input("출차하실 차량 번호를 입력하세요.")
-    Price = ""
-    print(Car_Num, "주차 비용은", Price, "입니다.")
 
 def Car_Inquire():
     clearConsole()
@@ -35,9 +31,19 @@ def Car_Inquire():
     clearConsole()
 
 def Car_Out():
+    print("차량 출차")
     Car_Num = input("출차 할 차량의 번호를 입력해주세요")
+    key = 0
+    for i in range(0, len(Car_List)):
+        if i == Car_Num:
+            key = i
 
-    print(Car_Num, "차량의 요금은", Price_Of_10Min,"원 입니다.")
+    print(Car_List[key][0], "차량의 경과 시간은", (Car_List[key][1] - datetime.datetime.now()) , "\n요금은 -- 원 입니다.")
+    print(Car_List[key][0], "차량의 경과 시간은", (Car_List[key][1] - datetime.datetime.now()).seconds,"\n요금은 -- 원 입니다.")
+
+def Admin_Setting():
+    print("관리자 메뉴")
+    Price_Of_10Min = int(input("변경하실 10분당 주차 요금을 입력하세요."))
 
 while True:
     Print_menus()
@@ -45,14 +51,16 @@ while True:
 
     if User_Input == "1":
         Car_Entrance()
-    if User_Input == "2":
-        Car_Out()
 
     elif User_Input == "2":
         Car_Out()
 
     elif User_Input == "3":
         Car_Inquire()
+
+    elif User_Input == "4":
+        Admin_Setting()
+
     else:
         clearConsole()
         print("잘못 입력하셨습니다. 초기화면으로 돌아갑니다.")
